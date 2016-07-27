@@ -39,7 +39,13 @@ class ViewController: UIViewController {
         userIsTyping = true
     }
     
-    @IBAction func touchDecimal(sender: UIButton) {
+    @IBAction func clearDisplay(sender: UIButton) {
+        displayLabel.text = "0"
+        userIsTyping = false
+    }
+    
+    
+    @IBAction private func touchDecimal(sender: UIButton) {
         if userIsTyping{
             if !decimalIsPresent{
                 let currentText = displayLabel.text!
@@ -51,6 +57,7 @@ class ViewController: UIViewController {
         }
         
     }
+    
     
     private var brain = CalculatorBrain()
     
