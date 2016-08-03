@@ -27,6 +27,7 @@ class CalculatorBrain{
         "sinh" : Operation.UnaryOperation(sinh),
         "cosh" : Operation.UnaryOperation(cosh),
         "tanh" : Operation.UnaryOperation(tanh),
+        "%" : Operation.UnaryOperation({$0 * 0.01}),
         "±" : Operation.UnaryOperation({-$0}),
         "×" : Operation.BinaryOperation({$0 * $1}),
         "−" : Operation.BinaryOperation({$0 - $1}),
