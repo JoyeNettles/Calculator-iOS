@@ -21,6 +21,7 @@ class CalculatorBrain{
         "π" : Operation.Constant(M_PI),
         "e" : Operation.Constant(M_E),
         "√" : Operation.UnaryOperation(sqrt),
+        "abs" : Operation.UnaryOperation(abs),
         "sin" : Operation.UnaryOperation(sin),
         "cos" : Operation.UnaryOperation(cos),
         "tan" : Operation.UnaryOperation(tan),

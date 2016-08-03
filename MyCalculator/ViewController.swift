@@ -41,9 +41,8 @@ class ViewController: UIViewController {
     
     @IBAction func clearDisplay(sender: UIButton) {
         displayLabel.text = "0"
-        userIsTyping = false
-        decimalIsPresent = false
         brain.setOperand(0.0)
+        resetDefaults()
     }
     
     
@@ -69,8 +68,7 @@ class ViewController: UIViewController {
         // Gives brain what has already been typed
         if(userIsTyping){
             brain.setOperand(displayValue)
-            userIsTyping = false
-            decimalIsPresent = false
+            resetDefaults()
         }
         
         // Send brain what it will need to calculate
@@ -80,6 +78,11 @@ class ViewController: UIViewController {
         
         // Display result of operation
         displayValue = brain.result
+    }
+    
+    private func resetDefaults(){
+        userIsTyping = false
+        decimalIsPresent = false
     }
     
 }
