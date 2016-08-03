@@ -42,6 +42,8 @@ class ViewController: UIViewController {
     @IBAction func clearDisplay(sender: UIButton) {
         displayLabel.text = "0"
         userIsTyping = false
+        decimalIsPresent = false
+        brain.setOperand(0.0)
     }
     
     
@@ -50,10 +52,12 @@ class ViewController: UIViewController {
             if !decimalIsPresent{
                 let currentText = displayLabel.text!
                 displayLabel.text = currentText + "."
+                decimalIsPresent = true
             }
         }else{
             displayLabel.text = "0."
             userIsTyping = true
+            decimalIsPresent = true
         }
         
     }
@@ -66,6 +70,7 @@ class ViewController: UIViewController {
         if(userIsTyping){
             brain.setOperand(displayValue)
             userIsTyping = false
+            decimalIsPresent = false
         }
         
         // Send brain what it will need to calculate
